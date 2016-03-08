@@ -32,6 +32,11 @@ See more at http://blog.squix.ch
 SSD1306   display(0x3c, D3, D4);
 SSD1306Ui ui     ( &display );
 
+extern bool drawFrame1(SSD1306 *display, SSD1306UiState* state, int x, int y);
+extern bool drawFrame2(SSD1306 *display, SSD1306UiState* state, int x, int y);
+extern bool drawFrame3(SSD1306 *display, SSD1306UiState* state, int x, int y);
+extern bool drawFrame4(SSD1306 *display, SSD1306UiState* state, int x, int y);
+extern bool msOverlay(SSD1306 *display, SSD1306UiState* state);
 // this array keeps function pointers to all frames
 // frames are the single views that slide from right to left
 bool (*frames[])(SSD1306 *display, SSD1306UiState* state, int x, int y) = { drawFrame1, drawFrame2, drawFrame3, drawFrame4 };
